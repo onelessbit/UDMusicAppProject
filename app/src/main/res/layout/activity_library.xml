@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.jukeboxplayer.LibraryActivity"
+    android:background="@color/appBgColor"
+    >
+
+    <!-- This should be made into a ViewPager... Plain texts for now... -->
+
+    <!-- tab: Artists -->
+    <TextView
+        android:id="@+id/tabArtists"
+        style="@style/libraryTabStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/libArtistsTab"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tabAlbums"
+        />
+
+    <!-- tab: Albums -->
+    <TextView
+        android:id="@+id/tabAlbums"
+        style="@style/libraryTabStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/libAlbumsTab"
+        android:textColor="@color/appHighlightColor"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/tabArtists"
+        app:layout_constraintRight_toLeftOf="@+id/tabSongs"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tabArtists" />
+
+    <!-- tab: Songs -->
+    <TextView
+        android:id="@+id/tabSongs"
+        style="@style/libraryTabStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/libSongsTab"
+        app:layout_constraintRight_toLeftOf="@+id/tabGenres"
+        app:layout_constraintLeft_toRightOf="@+id/tabAlbums"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tabArtists" />
+
+    <!-- tab: Genres -->
+    <TextView
+        android:id="@+id/tabGenres"
+        style="@style/libraryTabStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/libGenresTab"
+        app:layout_constraintLeft_toRightOf="@+id/tabSongs"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tabArtists" />
+
+
+
+    <!-- Current Tab Content -->
+    <ImageView
+        android:id="@+id/exampleAlbumA"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/album_cover_A"
+        android:cropToPadding="false"
+        android:src="@drawable/darkside_ep_cover"
+        app:layout_constraintBottom_toTopOf="@+id/exampleAlbumC"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/exampleAlbumB"
+        app:layout_constraintTop_toBottomOf="@+id/tabAlbums"
+         />
+
+    <ImageView
+        android:id="@+id/exampleAlbumB"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/are_you_land_or_water_album_cover"
+        android:contentDescription="@string/album_cover_B"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/exampleAlbumA"
+        app:layout_constraintBottom_toTopOf="@+id/exampleAlbumD"
+        app:layout_constraintTop_toBottomOf="@+id/tabSongs" />
+
+    <ImageView
+        android:id="@+id/exampleAlbumC"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/soad_toxicity_album_cover"
+        android:contentDescription="@string/album_cover_C"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exampleAlbumA"
+        app:layout_constraintRight_toLeftOf="@+id/exampleAlbumD"
+        app:layout_constraintBottom_toTopOf="@+id/prevSongButton" />
+
+    <ImageView
+        android:id="@+id/exampleAlbumD"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/vic_riza_album_cover"
+        android:contentDescription="@string/album_cover_D"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/exampleAlbumC"
+        app:layout_constraintTop_toBottomOf="@+id/exampleAlbumB"
+        app:layout_constraintBottom_toTopOf="@+id/nSongButton" />
+
+
+
+    <!-- Bottom Buttons Bar -->
+    <ImageButton
+        android:id="@+id/goToNowPlaying"
+        style="@style/controlButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cont_desc_go_to_now_playing"
+        android:src="@drawable/ic_my_now_playing_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/prevSongButton"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        />
+
+    <!-- Jump to the Start of Current Song / Previous Song -->
+    <ImageButton
+        android:id="@+id/prevSongButton"
+        style="@style/controlButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cont_desc_prev_track"
+        android:src="@drawable/ic_skip_previous_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/playPauseButton"
+        app:layout_constraintLeft_toRightOf="@+id/goToNowPlaying"
+        />
+
+    <!-- Play/Pause Button -->
+    <ImageButton
+        android:id="@+id/playPauseButton"
+        style="@style/controlButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cont_desc_play_pause"
+        android:src="@drawable/ic_play_circle_outline_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/prevSongButton"
+        app:layout_constraintRight_toLeftOf="@+id/nSongButton"
+        />
+
+    <!-- Jump to Next Song -->
+    <ImageButton
+        android:id="@+id/nSongButton"
+        style="@style/controlButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cont_desc_play_pause"
+        android:src="@drawable/ic_skip_next_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/goToPlaylist"
+        app:layout_constraintLeft_toRightOf="@+id/playPauseButton"
+        />
+
+    <ImageButton
+        android:id="@+id/goToPlaylist"
+        style="@style/controlButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cont_desc_go_to_plist"
+        android:src="@drawable/ic_queue_music_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/nSongButton"
+        />
+
+</android.support.constraint.ConstraintLayout>

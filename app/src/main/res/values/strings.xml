@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">JukeBoxPlayer</string>
+
+    <!-- Activity Names -->
+    <string name="npName">Now Playing</string>
+    <string name="libName">Library</string>
+    <string name="plistName">Playlist</string>
+
+
+    <!-- Current Playing song info -->
+    <string name="nowPlaying_songName">Example Song</string>
+    <string name="nowPlaying_artName">Example Artist</string>
+    <string name="nowPlaying_timeStamp">2:34</string>
+
+    <!-- Image descriptions -->
+    <string name="cont_desc_go_to_now_playing">Go to now playing</string>
+    <string name="cont_desc_go_to_plist">Go to playlist</string>
+    <string name="cont_desc_prev_track">Previous track</string>
+    <string name="cont_desc_play_pause">Play/Pause</string>
+    <string name="cont_desc_next_track">Next track</string>
+    <string name="cont_desc_go_to_lib">Go to library</string>
+    <string name="now_playing_album_cover">Now Playing Album cover</string>
+    <string name="album_cover_A">Album Cover A</string>
+    <string name="album_cover_B">Album Cover B</string>
+    <string name="album_cover_C">Album Cover C</string>
+    <string name="album_cover_D">Album Cover D</string>
+
+    <!-- Playlist layout texts -->
+    <string name="plistTxt">Current playlist</string>
+    <string name="exampleSong1">Song One Title</string>
+    <string name="exampleArtist1">Artist One</string>
+    <string name="exampleSong2">Song Two Title</string>
+    <string name="exampleArtist2">Artist Two</string>
+    <string name="exampleSong3">Song Three Title</string>
+    <string name="exampleArtist3">Artist Three</string>
+
+    <!-- Tab texts in Library -->
+    <string name="libArtistsTab">Artists</string>
+    <string name="libAlbumsTab">Albums</string>
+    <string name="libSongsTab">Songs</string>
+    <string name="libGenresTab">Genres</string>
+
+</resources>

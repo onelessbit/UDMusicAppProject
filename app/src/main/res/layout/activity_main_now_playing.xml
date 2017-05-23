@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.jukeboxplayer.Playlist"
+    android:background="@color/appBgColor"
+    >
+
+    <!-- Current Song Album Artwork -->
+    <ImageView
+        android:id="@+id/nowPlayingCover"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="6"
+        android:contentDescription="@string/now_playing_album_cover"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/darkside_ep_cover"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/currentSongInfo"
+        />
+
+    <!-- test comment test comment test comment -->
+    <!-- Current Song Info -->
+    <RelativeLayout
+        android:id="@+id/currentSongInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/currentSongProgress"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nowPlayingCover"
+        >
+
+        <LinearLayout
+            android:id="@+id/npSongInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            >
+            <!-- Current Song Title -->
+            <TextView
+                android:id="@+id/npSongName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nowPlaying_songName"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:maxWidth="400dp"
+                />
+
+            <!-- Current Song Artist -->
+            <TextView
+                android:id="@+id/npArtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nowPlaying_artName"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+        </LinearLayout>
+        <!-- Current Song Timestamp -->
+        <TextView
+            android:id="@+id/npTimeStamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/nowPlaying_timeStamp"
+            android:textSize="14sp" />
+
+
+    </RelativeLayout>
+
+    <!-- Current Song Progress Bar -->
+    <SeekBar
+        android:id="@+id/currentSongProgress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:max="100"
+        android:progress="20"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentSongInfo"
+        app:layout_constraintBottom_toTopOf="@+id/playPauseButton"
+        />
+
+    <!-- Bottom Buttons Bar -->
+    <ImageButton
+        android:id="@+id/goToPlaylist"
+        style="@style/controlButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cont_desc_go_to_plist"
+        android:src="@drawable/ic_queue_music_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/prevSongButton"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Jump to the Start of Current Song / Previous Song -->
+    <ImageButton
+        android:id="@+id/prevSongButton"
+        style="@style/controlButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cont_desc_prev_track"
+        android:src="@drawable/ic_skip_previous_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/playPauseButton"
+        app:layout_constraintLeft_toRightOf="@+id/goToPlaylist"
+        />
+
+    <!-- Play/Pause Button -->
+    <ImageButton
+        android:id="@+id/playPauseButton"
+        style="@style/controlButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cont_desc_play_pause"
+        android:src="@drawable/ic_play_circle_outline_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/prevSongButton"
+        app:layout_constraintRight_toLeftOf="@+id/nSongButton"
+        />
+
+    <!-- Jump to Next Song -->
+    <ImageButton
+        android:id="@+id/nSongButton"
+        style="@style/controlButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cont_desc_play_pause"
+        android:src="@drawable/ic_skip_next_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/goToLibrary"
+        app:layout_constraintLeft_toRightOf="@+id/playPauseButton"
+        />
+
+    <ImageButton
+        android:id="@+id/goToLibrary"
+        style="@style/controlButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cont_desc_go_to_lib"
+        android:src="@drawable/ic_library_music_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/nSongButton" />
+
+
+</android.support.constraint.ConstraintLayout>
